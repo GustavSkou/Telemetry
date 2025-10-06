@@ -1,0 +1,13 @@
+form {
+    padding: 20px;
+    margin: 0px;
+}
+
+.uploadMenu {
+    position: sticky;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: fit-content;
+    width: fit-content;
+}
