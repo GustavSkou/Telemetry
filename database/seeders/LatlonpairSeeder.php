@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Latlonpair;
+use App\Models\Route;
 use Illuminate\Database\Seeder;
 
 class LatlonpairSeeder extends Seeder
@@ -12,6 +13,16 @@ class LatlonpairSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
+        $amount_of_routes = 25;
+        // grab all routes created by RouteSeeder
+        Route::chunk($amount_of_routes, function ($routes) {
+            $amount = 25;
+            foreach ($routes as $route) {
+                Latlonpair::factory()->count($amount)->create([
+                    'route_id' => $route->id,
+                ]);
+            }
+        });
     }
 }

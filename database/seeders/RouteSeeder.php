@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Route;
+use Illuminate\Database\Seeder;
 
 class RouteSeeder extends Seeder
 {
@@ -13,6 +12,7 @@ class RouteSeeder extends Seeder
      */
     public function run(): void
     {
-        Route::factory()->count(25)->create();
+        $amount = 25;
+        Route::factory()->count($amount)->create();
     }
 }

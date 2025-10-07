@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\route>
  */
@@ -17,7 +18,7 @@ class RouteFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'created_by' => fake()->name()
+            'created_by' => fake()->name(),
         ];
     }
 }
