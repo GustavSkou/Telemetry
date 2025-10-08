@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         ]);*/
 
         $this->call([
+            RouteTypeSeeder::class,
             RouteSeeder::class,
             LatlonpairSeeder::class,
         ]);
