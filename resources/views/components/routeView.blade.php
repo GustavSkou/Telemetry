@@ -1,11 +1,14 @@
+@vite('resources/css/dashboard.css')
 <div class="routeView" id="routeView">
 
     <ul class="infoPanel">
+    <!--
         <li id="icon-li">
-            <img id="icon" class="routeTypeIcon">
-        </li>
+            <img id="icon" class="icon">
+            </li>
+    -->
         <li id="name-li">
-            <h2 id="name"></h2>
+            <h2 id="name">{{ $route->name }}</h2>
         </li>
     </ul>
 
@@ -31,9 +34,7 @@
           <div id="heartRate"></div>
         </li>
     </ul>
+
     <div id="tempMapId" class="map"></div>
-    <div class="selection">
-      <a class="button" id="remove-a">remove</a>
-      <a class="button" id="download-a">download</a>
-    </div>
-  </div>
+
+</div>

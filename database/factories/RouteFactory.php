@@ -17,7 +17,7 @@ class RouteFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'name' => 'Some Route',
             'created_by' => fake()->name(),
         ];
     }

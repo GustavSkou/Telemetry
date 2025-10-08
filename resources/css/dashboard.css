@@ -1,0 +1,39 @@
+.route-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.route-list li {
+    padding: 6px 0;
+}
+
+.routeView {
+    padding: 20px;
+    background-color: white;
+    width: fit-content;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.map {
+    height: 400px;
+    width: 600px;
+}
+
+.infoPanel {
+    display: flex;
+    padding-left: 0px;
+}
+
+.infoPanel>li {
+    padding-right: 15px;
+    list-style-type: none;
+    display: block;
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+    margin: auto 0;
+}
