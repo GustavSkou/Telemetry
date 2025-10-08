@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('created_by');
             $table->timestamp('date');
             $table->unsignedSmallInteger('duration');
+            $table->double('distance')->nullable();
             $table->unsignedSmallInteger('avgHr')->nullable();
             $table->unsignedSmallInteger('cal')->nullable();
             $table->foreignId('route_type_id')->constrained()->cascadeOnDelete();

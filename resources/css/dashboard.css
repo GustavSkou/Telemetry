@@ -10,10 +10,11 @@
 
 .routeView {
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     width: fit-content;
     display: block;
     margin-bottom: 20px;
+    border-radius: 5px;
 }
 
 .map {
@@ -36,4 +37,10 @@
     height: 24px;
     width: 24px;
     margin: auto 0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    
 }
