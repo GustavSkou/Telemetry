@@ -13,28 +13,58 @@
     </ul>
 
     <ul class="infoPanel">
-        <li id="distance-li">
-            <p>Distance</p>
-            <div id="distance"></div>
-        </li>
-        <li id="elev-li">
-            <p>Elev gain</p>
-            <div id="elev"></div>
-        </li>
-        <li id="speed-li">
-            <p>Speed</p>
-            <div id="speed"></div>
-        </li>
-        <li id="time-li">
-            <p>Time</p>
-            <div id="time"></div>
-        </li>
-        <li id="heartRate-li">
-          <p>Avg Hr</p>
-          <div id="heartRate"></div>
-        </li>
+
+        <!--DISTANCE-->
+        @if (false) 
+            <li>
+                <p>Distance</p>
+                <p></p>
+            </li>
+        @endif
+
+        <!--ELEVATION GAIN-->
+        @if (false) 
+            <li>
+                <p>Elev gain</p>
+                <p></p>
+            </li>
+        @endif
+        
+        <!--SPEED-->
+        @if (false)
+            <li>
+                <p>Speed</p>
+                <p></p>
+            </li>
+        @endif
+        
+        <!--TIME-->
+        @if ($route->duration != null)
+            <li>
+                <p>Time</p>
+                <p>{{ $route->duration }}</p>
+            </li>
+        @endif
+
+        <!--HEART RATE-->
+        @if ($route->avgHr != null)
+            <li>
+                <p>Avg Hr</p>
+                <p>{{ $route->avgHr }}</p>
+            </li>
+        @endif
+
+        <!--CALORIES BURNED-->
+        @if ($route->cal != null)
+            <li>
+                <p>Cal</p>
+                <p>{{ $route->cal }}</p>
+            </li>
+        @endif
+        
     </ul>
-
-    <div id="tempMapId" class="map"></div>
-
+    
+    @if(false) 
+        <div id="tempMapId" class="map"></div>
+    @endif
 </div>
