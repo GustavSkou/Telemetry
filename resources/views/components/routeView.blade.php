@@ -26,7 +26,10 @@
                 </li>
         -->
             <li id="name-li">
-                <a class="route-name" href="\routes\{{$route->id}}">{{ $route->getTypeName() }}</a>
+                <a class="route-name" href="\activities\{{$route->id}}">
+                    {{ $route->getTypeName() }}
+
+                </a>
             </li>
         </ul>
     </div>
