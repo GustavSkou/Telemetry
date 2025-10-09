@@ -51,7 +51,7 @@ class RouteFactory extends Factory
         return [
             'name' => 'Some Route',
             'created_by' => fake()->name(),
-            'date' => fake()->dateTimeThisYear(),
+            'date' => $this->faker->dateTimeBetween('-3 days', 'now'),//date()->dateTimeThisYear(),
             'duration' => $durationMinutes,
             'distance' => $distance,
             'avgHr' => $avgHr,

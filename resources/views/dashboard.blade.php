@@ -3,7 +3,7 @@
 @vite('resources/css/dashboard.css')
     <ul class="route-list">
         @foreach ($routes as $route)
-        <li class="r">
+        <li>
             <x-routeView :route="$route"></x-routeView>
         </li>
         @endforeach

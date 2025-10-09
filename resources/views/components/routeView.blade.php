@@ -7,7 +7,14 @@
     
         <time datetime="{{ $route->date->toIso8601String() }}">
             <!--check if the route date is equal or less then 2 days ago, else display dd-mm-yy-->
-            {{ $route->date->diffForHumans() }}
+            @php $date = $route->date @endphp
+
+            <!-- is route date under 2 days old -->
+            @if ($date && $date->greaterThan(now()->subDays(2)))
+                {{ $date->diffForHumans() }}
+            @else
+                {{ $date ? $date->format('d-m-Y') : '—' }}
+            @endif
         </time>
     </div>
 
@@ -19,7 +26,7 @@
                 </li>
         -->
             <li id="name-li">
-                <h2 id="name">{{ $route->getTypeName() }}</h2>
+                <a class="route-name" href="\routes\{{$route->id}}">{{ $route->getTypeName() }}</a>
             </li>
         </ul>
     </div>

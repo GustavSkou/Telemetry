@@ -50,3 +50,13 @@ body {
 .navbar li a:hover {
     color: orange;
 }
+
+.route-name {
+    font-size: large;
+    color: black;
+    text-decoration: none;
+}
+
+.route-name :hover {
+    color: orange;
+}

@@ -15,7 +15,11 @@ class RouteController extends Controller
     }
 
     // get a single route from its id
-    public function show($id) {}
+    public function show($id) {
+        $route = Route::Where('id', $id);
+
+        return view('route: '$id, ['route' => $route];)
+    }
 
     public function create() {}
 
