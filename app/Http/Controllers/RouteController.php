@@ -18,7 +18,7 @@ class RouteController extends Controller
     public function show($id) {
         $route = Route::Where('id', $id);
 
-        return view('route: '$id, ['route' => $route];)
+        //return view('route: '$id, ['route' => $route];)
     }
 
     public function create() {}
