@@ -22,7 +22,14 @@
                 <a href="/map">Map</a>
             </li>
             <li>
-                <a href="/upload">upload</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                        <div class="dropdown-content">
+                            <a href='/upload/file'>upload file</a>
+                            <a href='/upload/manual'>manual entry</a>
+                        </div>
+                </div>
+                
             </li>
         </ul>
     </header>
