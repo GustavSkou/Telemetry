@@ -9,10 +9,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [RouteController::class, 'index']);
 
+Route::get('/activities/{id}', [RouteController::class, 'show']);
+
+
 Route::get('map', function () {
     return view('map');
 });
 
-Route::get('/upload', function () {
-    return view('upload');
-});
+Route::get('/upload/{type}', [RouteController::class, 'create']);

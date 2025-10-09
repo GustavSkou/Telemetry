@@ -16,12 +16,18 @@ class RouteController extends Controller
 
     // get a single route from its id
     public function show($id) {
-        $route = Route::Where('id', $id);
+        $route = Route::findOrFail($id);
 
-        //return view('route: '$id, ['route' => $route];)
+        return view('activities', ['route' => $route]);
     }
 
-    public function create() {}
+    public function create($type) {
+        try {
+            return view('upload.' . $type);
+        } catch (\Throwable $th) {
+            $this->index();
+        }
+    }
 
     public function store() {}
 }
