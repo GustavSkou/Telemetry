@@ -8,4 +8,6 @@
         </li>
         @endforeach
     </ul>
+
+    {{ $routes->links() }}
 </x-layout>

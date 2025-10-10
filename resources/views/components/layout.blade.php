@@ -23,7 +23,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
+                    <button class="dropbtn">upload</button>
                         <div class="dropdown-content">
                             <a href='/upload/file'>upload file</a>
                             <a href='/upload/manual'>manual entry</a>

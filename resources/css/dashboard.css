@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 .route-list {
     list-style: none;
     margin: 0;
@@ -6,6 +8,7 @@
 
 .route-list li {
     padding: 6px 0;
+    width: fit-content;
 }
 
 .routeView {
@@ -27,10 +30,12 @@
     padding-left: 0px;
 }
 
-.infoPanel>li {
+.infoPanel li {
     padding-right: 15px;
     list-style-type: none;
-    display: block;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 .icon {

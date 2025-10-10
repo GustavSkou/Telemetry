@@ -25,6 +25,5 @@ class DatabaseSeeder extends Seeder
             RouteSeeder::class,
             LatlonpairSeeder::class,
         ]);
-
     }
 }

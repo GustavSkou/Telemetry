@@ -9,7 +9,7 @@ class RouteController extends Controller
     // get all route from db
     public function index()
     {
-        $routes = Route::all();
+        $routes = Route::orderBy('date', 'desc')->paginate(10);
 
         return view('dashboard', ['routes' => $routes]);
     }
@@ -22,6 +22,7 @@ class RouteController extends Controller
     }
 
     public function create($type) {
+        // return the view that corresponds to the type, this would be uploading a file or a manual entry
         try {
             return view('upload.' . $type);
         } catch (\Throwable $th) {
