@@ -7,35 +7,37 @@
     <title>Telemetry</title>
 </head>
 <body>
-    <header>
-        <ul class="navbar">
-            <li>
-                <a href="/">TeleMetry</a>
-            </li>
-            <li>
-                <a href="/">Dashboard</a>
-            </li>
-            <li>
-                <a href="">Training</a>
-            </li>
-            <li>
-                <a href="/map">Map</a>
-            </li>
-            <li>
-                <div class="dropdown">
-                    <button class="dropbtn">upload</button>
-                        <div class="dropdown-content">
-                            <a href='/upload/file'>upload file</a>
-                            <a href='/upload/manual'>manual entry</a>
-                        </div>
-                </div>
-                
-            </li>
-        </ul>
-    </header>
-    
-    <main class="container">
-        {{ $slot }}
-    </main>
+    <div class="container">
+        <header>
+            <ul class="navbar">
+                <li>
+                    <a href="/">TeleMetry</a>
+                </li>
+                <li>
+                    <a href="/">Dashboard</a>
+                </li>
+                <li>
+                    <a href="">Training</a>
+                </li>
+                <li>
+                    <a href="/map">Map</a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">upload</button>
+                            <div class="dropdown-content">
+                                <a href='/upload/file'>upload file</a>
+                                <a href='/upload/manual'>manual entry</a>
+                            </div>
+                    </div>
+                    
+                </li>
+            </ul>
+        </header>
+        
+        <main class="main">
+            {{ $slot }}
+        </main>
+    </div>
 </body>
 </html>
