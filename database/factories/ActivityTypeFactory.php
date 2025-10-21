@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\route_type>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ActivityType>
  */
-class RouteTypeFactory extends Factory
+class ActivityTypeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class RouteTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'some type',
+            'name' => 'activity',
         ];
     }
 }

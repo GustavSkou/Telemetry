@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\RouteType;
+use App\Models\ActivityType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\route>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Activity>
  */
-class RouteFactory extends Factory
+class ActivityFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -24,7 +24,7 @@ class RouteFactory extends Factory
         $avgHr = fake()->numberBetween(75, 200);
         $cal = (int) ($durationMinutes * (0.6309 * $avgHr + 0.1988 * $weight + 0.2017 * $age - 55.0969) / 4.184);
 
-        $route_types = RouteType::pluck('id')->toArray();
+        $route_types = ActivityType::pluck('id')->toArray();
         $route_type = fake()->randomElement($route_types);
 
         $distance = null;
@@ -49,14 +49,14 @@ class RouteFactory extends Factory
         }
 
         return [
-            'name' => 'Some Route',
+            'name' => 'Activity',
             'created_by' => fake()->name(),
             'date' => $this->faker->dateTimeBetween('-3 days', 'now'),//date()->dateTimeThisYear(),
             'duration' => $durationMinutes,
             'distance' => $distance,
             'avgHr' => $avgHr,
             'cal' => $cal,
-            'route_type_id' => fake()->randomElement($route_types),
+            'activity_type_id' => fake()->randomElement($route_types),
         ];
     }
 }

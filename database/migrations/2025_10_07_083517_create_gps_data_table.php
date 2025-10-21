@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('latlonpairs', function (Blueprint $table) {
+        Schema::create('gps_data', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('route_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('activity_id')->constrained()->cascadeOnDelete();
             $table->double('latitude');
             $table->double('longitude');
+            $table->double('elevation');
+            $table->timestamp('timestamp');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('latlonpairs');
+        Schema::dropIfExists('gps_data');
     }
 };

@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Route;
+use App\Models\Activity;
 
 class RouteController extends Controller
 {
     // get all route from db
     public function index()
     {
-        $routes = Route::orderBy('date', 'desc')->paginate(10);
+        $routes = Activity::orderBy('date', 'desc')->paginate(10);
 
         return view('dashboard', ['routes' => $routes]);
     }
 
     // get a single route from its id
     public function show($id) {
-        $route = Route::findOrFail($id);
+        $route = Activity::findOrFail($id);
 
         return view('activities', ['route' => $route]);
     }

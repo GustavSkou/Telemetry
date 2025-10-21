@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\RouteType;
+use App\Models\ActivityType;
 use Illuminate\Database\Seeder;
 
-class RouteTypeSeeder extends Seeder
+class ActivityTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class RouteTypeSeeder extends Seeder
     {
         $types = ['running', 'cycling', 'walking'];
         foreach ($types as $type) {
-            RouteType::factory()->create([
+            ActivityType::factory()->create([
                 'name' => $type,
             ]);
         }

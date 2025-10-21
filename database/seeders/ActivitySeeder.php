@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Route;
+use App\Models\Activity;
 use Illuminate\Database\Seeder;
 
-class RouteSeeder extends Seeder
+class ActivitySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class RouteSeeder extends Seeder
     public function run(): void
     {
         $amount = 25;
-        Route::factory()->count($amount)->create();
+        Activity::factory()->count($amount)->create();
     }
 }
