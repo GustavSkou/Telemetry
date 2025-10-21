@@ -1,15 +1,15 @@
 @vite('resources/css/dashboard.css')
-
-<div class="routeView">
+@vite('resources/js/activityMap.js')
+<div class="activityView">
 
     <div class="user-info">
-        <a>{{ $route->created_by }}</a>
+        <a>{{ $activity->created_by }}</a>
     
-        <time datetime="{{ $route->date->toIso8601String() }}">
-            <!--check if the route date is equal or less then 2 days ago, else display dd-mm-yy-->
-            @php $date = $route->date @endphp
+        <time datetime="{{ $activity->date->toIso8601String() }}">
+            <!--check if the activity date is equal or less then 2 days ago, else display dd-mm-yy-->
+            @php $date = $activity->date @endphp
 
-            <!-- is route date under 2 days old -->
+            <!-- is activity date under 2 days old -->
             @if ($date && $date->greaterThan(now()->subDays(2)))
                 {{ $date->diffForHumans() }}
             @else
@@ -26,8 +26,8 @@
                 </li>
         -->
             <li id="name-li">
-                <a class="route-name" href="\activities\{{$route->id}}">
-                    {{ $route->getTypeName() }}
+                <a class="activity-name" href="\activities\{{$activity->id}}">
+                    {{ $activity->getTypeName() }}
 
                 </a>
             </li>
@@ -38,10 +38,10 @@
         <ul class="infoPanel">
 
             <!--DISTANCE-->
-            @if ($route->distance != null) 
+            @if ($activity->distance != null) 
                 <li>
                     <p>Distance</p>
-                    <p>{{ $route->distance }}</p>
+                    <p>{{ $activity->distance }}</p>
                 </li>
             @endif
 
@@ -62,33 +62,34 @@
             @endif
             
             <!--TIME-->
-            @if ($route->duration != null)
+            @if ($activity->duration != null)
                 <li>
                     <p>Time</p>
-                    <p>{{ $route->duration }}</p>
+                    <p>{{ $activity->duration }}</p>
                 </li>
             @endif
 
             <!--HEART RATE-->
-            @if ($route->avgHr != null)
+            @if ($activity->avgHr != null)
                 <li>
                     <p>Avg Hr</p>
-                    <p>{{ $route->avgHr }}</p>
+                    <p>{{ $activity->avgHr }}</p>
                 </li>
             @endif
 
             <!--CALORIES BURNED-->
-            @if ($route->cal != null)
+            @if ($activity->cal != null)
                 <li>
                     <p>Cal</p>
-                    <p>{{ $route->cal }}</p>
+                    <p>{{ $activity->cal }}</p>
                 </li>
             @endif
             
         </ul>
     </div>
     
-    @if(false) 
-        <div id="tempMapId" class="map"></div>
+    @if(true) 
+        <div id="map-{{ $activity->id }}" class="map" 
+            @isset($activity) data-activity='@json($activity)' @endisset></div>
     @endif
 </div>

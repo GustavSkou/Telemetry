@@ -24,7 +24,7 @@ class Activity extends Model
 
     public function latlonpairs()
     {
-        return $this->hasMany(Latlonpair::class, 'activity_id');
+        //return $this->hasMany(Latlonpair::class, 'activity_id');
     }
 
     // public function get
@@ -34,7 +34,7 @@ class Activity extends Model
         return $this->activityType->name;
     }
 
-    public function getDistance() {
+    /*public function getDistance() {
         $latLngs = $this->latlonpairs();
         if ($latLngs->count() > 1) {
             return $this->distance;
@@ -46,7 +46,7 @@ class Activity extends Model
             }
             return $resultDistance;
         }
-    }
+    }*/
 
     function calculateDistance($lat1, $lon1, $lat2, $lon2) {
         $r = 6371;

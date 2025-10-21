@@ -9,9 +9,11 @@ class RouteController extends Controller
     // get all route from db
     public function index()
     {
-        $routes = Activity::orderBy('date', 'desc')->paginate(10);
+        $activities = Activity::select('id', 'name', 'created_by', 'date', 'duration', 'distance', 'avgHr', 'cal', 'activity_type_id')
+        ->orderBy('date', 'desc')
+        ->paginate(10);
 
-        return view('dashboard', ['routes' => $routes]);
+        return view('dashboard', ['activities' => $activities]);
     }
 
     // get a single route from its id
@@ -26,7 +28,7 @@ class RouteController extends Controller
         try {
             return view('upload.' . $type);
         } catch (\Throwable $th) {
-            $this->index();
+            return redirect()->route('dashboard');
         }
     }
 

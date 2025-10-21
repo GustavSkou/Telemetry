@@ -1,13 +1,13 @@
 <x-layout>
 @vite('resources/css/app.css')
 @vite('resources/css/dashboard.css')
-    <ul class="route-list">
-        @foreach ($routes as $route)
+    <ul class="activity-list">
+        @foreach ($activities as $activity)
         <li>
-            <x-routeView :route="$route"></x-routeView>
+            <x-activityView :activity="$activity"></x-activityView>
         </li>
         @endforeach
     </ul>
 
-    {{ $routes->links() }}
+    {{ $activities->links() }}
 </x-layout>

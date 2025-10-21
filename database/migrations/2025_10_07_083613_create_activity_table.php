@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedSmallInteger('avgHr')->nullable();
             $table->unsignedSmallInteger('cal')->nullable();
             $table->foreignId('activity_type_id')->constrained()->cascadeOnDelete();
+            $table->index('date');
         });
     }
 

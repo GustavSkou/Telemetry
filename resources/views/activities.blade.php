@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-routeView :route="$route">
+    <x-routeView :activity="$activity">
 
     </x-routeView>
 
